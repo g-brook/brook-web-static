@@ -1,0 +1,89 @@
+<svg width="1200" height="400" viewBox="0 0 1200 400" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <!-- Definitions for Gradients and Filters -->
+  <defs>
+    <linearGradient id="tunnel_gradient" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#14B8A6" stop-opacity="0.2"/>
+      <stop offset="50%" stop-color="#14B8A6" stop-opacity="0.6"/>
+      <stop offset="100%" stop-color="#14B8A6" stop-opacity="0.2"/>
+    </linearGradient>
+    <filter id="glow_filter" x="-20%" y="-20%" width="140%" height="140%">
+      <feGaussianBlur stdDeviation="10" result="blur"/>
+      <feComposite in="SourceGraphic" in2="blur" operator="over"/>
+    </filter>
+  </defs>
+
+  <!-- 1. LOCAL CLIENT SITE (Left) -->
+  <g transform="translate(50, 50)">
+    <rect width="320" height="300" rx="24" fill="#0F172A" fill-opacity="0.03" stroke="#E2E8F0" stroke-width="2" stroke-dasharray="8 4"/>
+    <text x="160" y="-15" fill="#64748B" font-family="Inter, sans-serif" font-size="14" font-weight="800" text-anchor="middle" letter-spacing="0.1em">LOCAL SITE</text>
+    
+    <!-- User Application Icon -->
+    <g transform="translate(40, 60)">
+      <rect width="64" height="64" rx="16" fill="#F1F5F9" stroke="#CBD5E1" stroke-width="1.5"/>
+      <path d="M44 28H20M44 28C45.1046 28 46 28.8954 46 30V40C46 41.1046 45.1046 42 44 42H20C18.8954 42 18 41.1046 18 40V30C18 28.8954 18.8954 28 20 28M44 28V24C44 22.8954 43.1046 22 42 22M20 28V24C20 22.8954 20.8954 22 22 22M22 22V20C22 18.8954 22.8954 18 24 18H40C41.1046 18 42 18.8954 42 20V22M22 22H42" stroke="#475569" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+      <text x="32" y="90" fill="#475569" font-family="Inter, sans-serif" font-size="12" font-weight="700" text-anchor="middle">Apps / Web</text>
+    </g>
+
+    <!-- Arrow -->
+    <path d="M120 92 L170 92" stroke="#CBD5E1" stroke-width="2" marker-end="url(#arrow_head)"/>
+    <text x="145" y="82" fill="#94A3B8" font-family="Inter, sans-serif" font-size="10" font-weight="700" text-anchor="middle">TCP/UDP</text>
+
+    <!-- Brook Client Icon -->
+    <g transform="translate(190, 45)">
+      <rect width="90" height="100" rx="20" fill="#14B8A6" fill-opacity="0.1" stroke="#14B8A6" stroke-width="2"/>
+      <text x="45" y="45" fill="#14B8A6" font-family="Inter, sans-serif" font-size="12" font-weight="900" text-anchor="middle">BROOK</text>
+      <text x="45" y="65" fill="#14B8A6" font-family="Inter, sans-serif" font-size="14" font-weight="700" text-anchor="middle">CLIENT</text>
+      <rect x="25" y="80" width="40" height="4" rx="2" fill="#14B8A6" fill-opacity="0.3"/>
+    </g>
+
+    <text x="160" y="270" fill="#94A3B8" font-family="Inter, sans-serif" font-size="12" font-weight="600" text-anchor="middle">Encryption &amp; Encapsulation</text>
+  </g>
+
+  <!-- 2. THE INTERNET (Center) -->
+  <g transform="translate(420, 100)">
+    <circle cx="180" cy="100" r="80" fill="#F8FAFC" stroke="#E2E8F0" stroke-width="2" stroke-dasharray="4 4"/>
+    <path d="M140 100 A40 40 0 0 1 220 100 A40 40 0 0 1 140 100 M180 60 V140 M140 100 H220" stroke="#94A3B8" stroke-width="1.5" stroke-linecap="round"/>
+    <text x="180" y="210" fill="#94A3B8" font-family="Inter, sans-serif" font-size="14" font-weight="800" text-anchor="middle" letter-spacing="0.1em">INTERNET</text>
+
+    <!-- Secure Tunnel (Pipe) -->
+    <g transform="translate(-50, 80)">
+      <rect x="0" y="0" width="460" height="40" rx="20" fill="url(#tunnel_gradient)" stroke="#14B8A6" stroke-opacity="0.4" stroke-width="1.5"/>
+      <path d="M20 20 H440" stroke="#14B8A6" stroke-width="4" stroke-dasharray="12 16" stroke-linecap="round">
+        <animate attributeName="stroke-dashoffset" from="100" to="0" dur="2s" repeatCount="indefinite" />
+      </path>
+      <text x="230" y="-10" fill="#14B8A6" font-family="Inter, sans-serif" font-size="11" font-weight="900" text-anchor="middle" letter-spacing="0.1em">ENCRYPTED BROOK TUNNEL (TLS / WSS)</text>
+    </g>
+  </g>
+
+  <!-- 3. REMOTE SERVER SITE (Right) -->
+  <g transform="translate(830, 50)">
+    <rect width="320" height="300" rx="24" fill="#0F172A" fill-opacity="0.03" stroke="#E2E8F0" stroke-width="2" stroke-dasharray="8 4"/>
+    <text x="160" y="-15" fill="#64748B" font-family="Inter, sans-serif" font-size="14" font-weight="800" text-anchor="middle" letter-spacing="0.1em">REMOTE SERVER SITE</text>
+
+    <!-- Brook Server Icon -->
+    <g transform="translate(40, 45)">
+      <rect width="90" height="100" rx="20" fill="#14B8A6" stroke="#14B8A6" stroke-width="3" filter="url(#glow_filter)"/>
+      <text x="45" y="45" fill="white" font-family="Inter, sans-serif" font-size="12" font-weight="900" text-anchor="middle">BROOK</text>
+      <text x="45" y="65" fill="white" font-family="Inter, sans-serif" font-size="14" font-weight="700" text-anchor="middle">SERVER</text>
+      <rect x="25" y="80" width="40" height="4" rx="2" fill="white" fill-opacity="0.4"/>
+    </g>
+
+    <!-- Arrow -->
+    <path d="M140 92 L190 92" stroke="#CBD5E1" stroke-width="2" marker-end="url(#arrow_head)"/>
+    <text x="165" y="82" fill="#94A3B8" font-family="Inter, sans-serif" font-size="10" font-weight="700" text-anchor="middle">Decoded</text>
+
+    <!-- Target Service Icon -->
+    <g transform="translate(200, 60)">
+      <rect width="64" height="64" rx="16" fill="#F1F5F9" stroke="#CBD5E1" stroke-width="1.5"/>
+      <path d="M44 32C44 38.6274 38.6274 44 32 44C25.3726 44 20 38.6274 20 32C20 25.3726 25.3726 20 32 20C38.6274 20 44 25.3726 44 32ZM44 32H20M32 44C32 44 35 41.5 35 32C35 22.5 32 20 32 20M32 44C32 44 29 41.5 29 32C29 22.5 32 20 32 20" stroke="#475569" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+      <text x="32" y="90" fill="#475569" font-family="Inter, sans-serif" font-size="12" font-weight="700" text-anchor="middle">Target Service</text>
+    </g>
+
+    <text x="160" y="270" fill="#94A3B8" font-family="Inter, sans-serif" font-size="12" font-weight="600" text-anchor="middle">Forwarding &amp; Termination</text>
+  </g>
+
+  <!-- Arrow Marker Definition -->
+  <marker id="arrow_head" markerWidth="10" markerHeight="7" refX="9" refY="3.5" orient="auto">
+    <polygon points="0 0, 10 3.5, 0 7" fill="#CBD5E1" />
+  </marker>
+</svg>
